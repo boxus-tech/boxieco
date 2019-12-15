@@ -178,6 +178,20 @@ void loop()
 }
 
 //
+// Empirical corrections for in-box tempreature in order to predict
+// a temperature outside of the box.
+//
+float tempCorrection(int inTemp)
+{
+  if (inTemp < 19)
+    return inTemp - 3;
+  else if (inTemp >= 19 and inTemp < 22)
+    return inTemp - 2.2;
+  else if (inTemp >= 22)
+    return inTemp - 2.8;
+}
+
+//
 // Print sensors data on the display
 //
 void printInfoDisplay()
@@ -186,7 +200,7 @@ void printInfoDisplay()
   display.setCursor(0, 0);
 
   display.print(" Temp: ");
-  display.print(myBME280.readTempC(), 2);
+  display.print(tempCorrection(myBME280.readTempC()), 2);
   display.println("C");
 
   display.print(" Hum.: ");
