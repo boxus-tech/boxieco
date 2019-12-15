@@ -7,6 +7,12 @@ cache:
 git:
   depth: false
   quiet: true
+addons:
+  apt:
+    packages:
+      - python3
+      - python3-pip
+      - python3-setuptools
 env:
   global:
      # You can uncomment this to explicitly choose an (old) version of the Arduino IDE
@@ -15,10 +21,11 @@ before_install:
   - source <(curl -SLs https://raw.githubusercontent.com/adafruit/travis-ci-arduino/master/install.sh)
 install:
   # Note that every library should be installed in a seperate command
+  - git clone https://github.com/adafruit/Adafruit-PCD8544-Nokia-5110-LCD-library.git ~/arduino_ide/libraries/Adafruit_PCD8544_Nokia_5110_LCD_library
   - arduino --install-library "SparkFun CCS811 Arduino Library"
   - arduino --install-library "SparkFun BME280"
   - arduino --install-library "Adafruit GFX Library"
-  - arduino --install-library "Adafruit PCD8544 Nokia 5110 LCD Library"
+  # - arduino --install-library "Adafruit PCD8544"
   - arduino --install-library "Arduino Low Power"
 script:
   - build_main_platforms
