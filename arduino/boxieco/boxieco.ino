@@ -44,8 +44,8 @@
   Distributed as-is; no warranty is given.
 ******************************************************************************/
 
-#include "LowPower.h"  // Experimental and for
-#include <avr/power.h> // Power management only
+#include <avr/power.h> // Experimental and for power management only
+// #include "LowPower.h"  // Download LowPower.h here: https://github.com/rocketscream/Low-Power
 
 #include <Wire.h>
 #include <SparkFunBME280.h> // Click here to get the library: http://librarymanager/All#SparkFun_BME280
@@ -170,8 +170,8 @@ void loop()
   // ********** Another attempt to reduce power consumption *********
   // Triggers a 8000 ms sleep
   // LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);
-  LowPower.idle(SLEEP_8S, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
-                SPI_OFF, USART0_OFF, TWI_OFF);
+  // LowPower.idle(SLEEP_8S, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
+  //               SPI_OFF, USART0_OFF, TWI_OFF);
   // ****************************************************************
 
   delay(2000); // Delay between readings
