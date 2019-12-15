@@ -20,8 +20,10 @@ env:
 before_install:
   - source <(curl -SLs https://raw.githubusercontent.com/adafruit/travis-ci-arduino/master/install.sh)
 install:
+  - [ ! -d "~/arduino_ide/libraries/Adafruit_PCD8544_Nokia_5110_LCD_library" ] && git clone https://github.com/adafruit/Adafruit-PCD8544-Nokia-5110-LCD-library.git ~/arduino_ide/libraries/Adafruit_PCD8544_Nokia_5110_LCD_library
+  - [ ! -d "~/arduino_ide/libraries/Low-Power" ] && git clone https://github.com/rocketscream/Low-Power ~/arduino_ide/libraries/Low-Power
+
   # Note that every library should be installed in a seperate command
-  - git clone https://github.com/adafruit/Adafruit-PCD8544-Nokia-5110-LCD-library.git ~/arduino_ide/libraries/Adafruit_PCD8544_Nokia_5110_LCD_library
   - arduino --install-library "SparkFun CCS811 Arduino Library"
   - arduino --install-library "SparkFun BME280"
   - arduino --install-library "Adafruit GFX Library"
