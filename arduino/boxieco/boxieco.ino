@@ -189,6 +189,8 @@ float tempCorrection(int inTemp)
     return inTemp - 2.2;
   else if (inTemp >= 22)
     return inTemp - 2.8;
+  else
+    return inTemp - 2;
 }
 
 //
