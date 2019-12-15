@@ -44,7 +44,7 @@
   Distributed as-is; no warranty is given.
 ******************************************************************************/
 
-#include <avr/power.h> // Experimental and for power management only
+// #include <avr/power.h> // Experimental and for power management only
 // #include "LowPower.h"  // Download LowPower.h here: https://github.com/rocketscream/Low-Power
 
 #include <Wire.h>
@@ -74,14 +74,14 @@ void setup()
   // ****************************************************************
   // ********** Some attempts to reduce power consumption ***********
   // Disable ADC
-  ADCSRA = 0;
-  power_adc_disable();
+  // ADCSRA = 0;
+  // power_adc_disable();
 
-  noInterrupts();
-  CLKPR = _BV(CLKPCE);  // enable change of the clock prescaler
-  CLKPR = _BV(CLKPS0);  // divide frequency by 2
-  CLKPR = _BV(CLKPS0);
-  interrupts();
+  // noInterrupts();
+  // CLKPR = _BV(CLKPCE);  // enable change of the clock prescaler
+  // CLKPR = _BV(CLKPS0);  // divide frequency by 2
+  // CLKPR = _BV(CLKPS0);
+  // interrupts();
   // ****************** Power management end ************************
   // ****************************************************************
 
