@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/boxus-tech/boxieco.svg?branch=master)](https://travis-ci.org/boxus-tech/boxieco)
-
-# Boxieco
+# Boxieco [![Build Status](https://travis-ci.org/boxus-tech/boxieco.svg?branch=master)](https://travis-ci.org/boxus-tech/boxieco)
 
 DIY indoor environment monitor with temperature, humidity, pressure, eCO2 and TVOC readings.
 
